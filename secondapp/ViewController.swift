@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //MARK: Actions
     @IBAction func botonReset(sender: UIButton) {
         nombreLabel.text    = "Hola desconocido"
-        
+        imagen.image        = UIImage(named: "imagen predeterminada")
     }
     
    @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {
@@ -49,7 +49,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func textFieldDidEndEditing(textField: UITextField) {
         if nombreTxt.text != "" {
-            nombreLabel.text = "Hola "+nombreTxt.text!
+            nombreLabel.text    = "Hola "+nombreTxt.text!
+            nombreTxt.text      = nil
         }else{
             nombreLabel.text = "Hola desconocido"
         }

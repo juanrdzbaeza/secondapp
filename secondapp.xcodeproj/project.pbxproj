@@ -388,6 +388,7 @@
 				0D3FBCA71F828A14001DED3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D3FBCA81F828A14001DED3F /* Build configuration list for PBXNativeTarget "secondappTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +397,7 @@
 				0D3FBCAA1F828A14001DED3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
