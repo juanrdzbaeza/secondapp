@@ -13,6 +13,7 @@
 		0D3FBC931F828A14001DED3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBC921F828A14001DED3F /* Assets.xcassets */; };
 		0D3FBC961F828A14001DED3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBC941F828A14001DED3F /* LaunchScreen.storyboard */; };
 		0D3FBCA11F828A14001DED3F /* secondappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3FBCA01F828A14001DED3F /* secondappTests.swift */; };
+		0DCB0FBF1F8BC01700A59B99 /* EvaluationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB0FBE1F8BC01700A59B99 /* EvaluationControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0D3FBC9C1F828A14001DED3F /* secondappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = secondappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3FBCA01F828A14001DED3F /* secondappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondappTests.swift; sourceTree = "<group>"; };
 		0D3FBCA21F828A14001DED3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DCB0FBE1F8BC01700A59B99 /* EvaluationControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EvaluationControl.swift; path = ../EvaluationControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		0D3FBC8A1F828A14001DED3F /* secondapp */ = {
 			isa = PBXGroup;
 			children = (
+				0DCB0FBE1F8BC01700A59B99 /* EvaluationControl.swift */,
 				0D3FBC8B1F828A14001DED3F /* AppDelegate.swift */,
 				0D3FBC8D1F828A14001DED3F /* ViewController.swift */,
 				0D3FBC8F1F828A14001DED3F /* Main.storyboard */,
@@ -199,6 +202,7 @@
 			files = (
 				0D3FBC8E1F828A14001DED3F /* ViewController.swift in Sources */,
 				0D3FBC8C1F828A14001DED3F /* AppDelegate.swift in Sources */,
+				0DCB0FBF1F8BC01700A59B99 /* EvaluationControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
