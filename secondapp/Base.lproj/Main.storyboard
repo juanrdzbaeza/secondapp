@@ -54,7 +54,7 @@
                                     <rect key="frame" x="20" y="39" width="138" height="21"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lz-kB-xWf" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="3Lz-kB-xWf" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -84,6 +84,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="controlEvaluacion" destination="3Lz-kB-xWf" id="2mH-6Z-z5S"/>
                         <outlet property="imagen" destination="T0l-KF-hcI" id="SuX-2O-QcU"/>
                         <outlet property="nombreLabel" destination="AOy-M7-fCC" id="Izm-xd-dG9"/>
                         <outlet property="nombreTxt" destination="jg9-Qd-Qt4" id="r6E-pv-QT7"/>
@@ -96,7 +97,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="225" y="237"/>
+            <point key="canvasLocation" x="597" y="197"/>
         </scene>
     </scenes>
     <resources>

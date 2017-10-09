@@ -18,26 +18,55 @@ class EvaluationControl: UIView {
     }
     */
     
+    // MARK Atributos
+    var gradoAfinidad = 0 {
+        didSet{
+            actualizaEstrellas()
+        }
+    }
+    var botones = [UIButton]()
+    
     // MARK: inicializacion
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        let boton = UIButton(frame: CGRect(x:0, y:0, width: 44, height: 44))
-        boton.backgroundColor = UIColor.greenColor()
-        addSubview(boton)
+        //let alto = self.frame.height
+        let alto = CGFloat(44)
+        let ancho = self.frame.width/5
+        for i in 0..<5{
+            let boton = UIButton(frame: CGRect(x:0, y:0, width: ancho, height: alto))
+            //boton.backgroundColor = UIColor.greenColor()
+            boton.setImage(UIImage(named:"estrella vacia"), forState: .Normal)
+            boton.setImage(UIImage(named:"estrella llena" ), forState: .Selected)
+            boton.adjustsImageWhenHighlighted = false
+            boton.addTarget(self, action: #selector(btnEval(_:)), forControlEvents: .TouchDown)
+            boton.tag = i+1
+            botones += [boton]
+            addSubview(boton)
+        }
     }
     
     override func intrinsicContentSize() -> CGSize {
         return CGSize(width: 240, height: 44)
     }
     
+    override func layoutSubviews() {
+        for (i, boton) in botones.enumerate() {
+            boton.frame.origin.x = CGFloat(i * (44 + 5))
+        }
+        actualizaEstrellas()
+    }
     
+    func btnEval(boton: UIButton) {
+        //print("Boton \(boton.tag) pulsato...")
+        gradoAfinidad = botones.indexOf(boton)! + 1
+        //actualizaEstrellas()
+    }
     
-    
-    
-    
-    
-    
+    func actualizaEstrellas(){
+        for (i, botonI) in botones.enumerate(){
+            botonI.selected = gradoAfinidad > i
+        }
+    }
     
     
     

@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var nombreLabel: UILabel!
     @IBOutlet weak var nombreTxt: UITextField!
     @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var controlEvaluacion: EvaluationControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBAction func botonReset(sender: UIButton) {
         nombreLabel.text    = "Hola desconocido"
         imagen.image        = UIImage(named: "imagen predeterminada")
+        controlEvaluacion.gradoAfinidad = 0 //ejercicio 4
     }
     
    @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {

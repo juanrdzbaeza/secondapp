@@ -14,6 +14,7 @@
 		0D3FBC961F828A14001DED3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBC941F828A14001DED3F /* LaunchScreen.storyboard */; };
 		0D3FBCA11F828A14001DED3F /* secondappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3FBCA01F828A14001DED3F /* secondappTests.swift */; };
 		0DCB0FBF1F8BC01700A59B99 /* EvaluationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB0FBE1F8BC01700A59B99 /* EvaluationControl.swift */; };
+		0DCB0FC11F8BE08F00A59B99 /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB0FC01F8BE08F00A59B99 /* Amigo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0D3FBCA01F828A14001DED3F /* secondappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondappTests.swift; sourceTree = "<group>"; };
 		0D3FBCA21F828A14001DED3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DCB0FBE1F8BC01700A59B99 /* EvaluationControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EvaluationControl.swift; path = ../EvaluationControl.swift; sourceTree = "<group>"; };
+		0DCB0FC01F8BE08F00A59B99 /* Amigo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				0D3FBC921F828A14001DED3F /* Assets.xcassets */,
 				0D3FBC941F828A14001DED3F /* LaunchScreen.storyboard */,
 				0D3FBC971F828A14001DED3F /* Info.plist */,
+				0DCB0FC01F8BE08F00A59B99 /* Amigo.swift */,
 			);
 			path = secondapp;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				0D3FBC8E1F828A14001DED3F /* ViewController.swift in Sources */,
 				0D3FBC8C1F828A14001DED3F /* AppDelegate.swift in Sources */,
 				0DCB0FBF1F8BC01700A59B99 /* EvaluationControl.swift in Sources */,
+				0DCB0FC11F8BE08F00A59B99 /* Amigo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
