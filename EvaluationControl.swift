@@ -21,6 +21,14 @@ class EvaluationControl: UIView {
     // MARK: inicializacion
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        let boton = UIButton(frame: CGRect(x:0, y:0, width: 44, height: 44))
+        boton.backgroundColor = UIColor.greenColor()
+        addSubview(boton)
+    }
+    
+    override func intrinsicContentSize() -> CGSize {
+        return CGSize(width: 240, height: 44)
     }
     
     

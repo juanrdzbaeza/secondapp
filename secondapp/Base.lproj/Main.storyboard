@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                    <rect key="frame" x="20" y="144" width="240" height="240"/>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="vrK-bb-dWv" appends="YES" id="Ql7-UO-UHE"/>
@@ -54,6 +54,13 @@
                                     <rect key="frame" x="20" y="39" width="138" height="21"/>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lz-kB-xWf" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="392" width="240" height="44"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -63,6 +70,7 @@
                                 <exclude reference="WgX-QR-Qco"/>
                                 <exclude reference="T0l-KF-hcI"/>
                                 <exclude reference="AOy-M7-fCC"/>
+                                <exclude reference="3Lz-kB-xWf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -71,6 +79,7 @@
                                 <include reference="WgX-QR-Qco"/>
                                 <include reference="T0l-KF-hcI"/>
                                 <include reference="AOy-M7-fCC"/>
+                                <include reference="3Lz-kB-xWf"/>
                             </mask>
                         </variation>
                     </view>
