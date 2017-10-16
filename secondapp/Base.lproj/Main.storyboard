@@ -5,19 +5,62 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Amigo Table View Controller-->
         <scene sceneID="WdO-f9-BcR">
             <objects>
-                <tableViewController id="VC0-QR-U7s" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
+                <tableViewController id="VC0-QR-U7s" customClass="AmigoTableViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="erv-XG-sjZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="130" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erv-XG-sjZ" id="X34-Ml-H5q">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="b0o-Mw-hDG">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="29" width="100" height="100"/>
+                                            </variation>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-PL-6De" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="108" y="72" width="284" height="57"/>
+                                            </variation>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQD-RV-3MC">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="108" y="29" width="284" height="21"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="b0o-Mw-hDG"/>
+                                            <exclude reference="J4w-PL-6De"/>
+                                            <exclude reference="cQD-RV-3MC"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="b0o-Mw-hDG"/>
+                                            <include reference="J4w-PL-6De"/>
+                                            <include reference="cQD-RV-3MC"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="evaluacion" destination="J4w-PL-6De" id="Y6g-1n-UnA"/>
+                                    <outlet property="foto" destination="b0o-Mw-hDG" id="Mx2-oW-n9F"/>
+                                    <outlet property="nombre" destination="cQD-RV-3MC" id="QTz-5Z-HsA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYF-1G-8vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-99" y="178"/>
+            <point key="canvasLocation" x="-90" y="178"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

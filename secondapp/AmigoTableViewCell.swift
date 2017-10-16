@@ -10,6 +10,13 @@ import UIKit
 
 class AmigoTableViewCell: UITableViewCell {
 
+    //MARK: propiedades
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var nombre: UILabel!
+    @IBOutlet weak var evaluacion: EvaluationControl!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
