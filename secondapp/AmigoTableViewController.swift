@@ -16,7 +16,7 @@ class AmigoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
-        let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 0)
+        let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 4)
         let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
         amigos += [amigo1!, amigo2!, amigo3!]
         

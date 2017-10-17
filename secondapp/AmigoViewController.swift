@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: properties
-    @IBOutlet weak var nombreLabel: UILabel!
     @IBOutlet weak var nombreTxt: UITextField!
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var controlEvaluacion: EvaluationControl!
@@ -28,12 +27,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     //MARK: Actions
-    @IBAction func botonReset(sender: UIButton) {
-        nombreLabel.text    = "Hola desconocido"
-        imagen.image        = UIImage(named: "imagen predeterminada")
-        controlEvaluacion.gradoAfinidad = 0 //ejercicio 4
-    }
-    
    @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {
         nombreTxt.resignFirstResponder()
         let imagePickerCtrl         = UIImagePickerController()
@@ -47,15 +40,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Hide the keyboard.
         textField.resignFirstResponder()
         return true
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if nombreTxt.text != "" {
-            nombreLabel.text    = "Hola "+nombreTxt.text!
-            nombreTxt.text      = nil
-        }else{
-            nombreLabel.text = "Hola desconocido"
-        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

@@ -10,12 +10,15 @@
             <objects>
                 <tableViewController id="VC0-QR-U7s" customClass="AmigoTableViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="130" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erv-XG-sjZ" id="X34-Ml-H5q">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="b0o-Mw-hDG">
@@ -24,11 +27,11 @@
                                                 <rect key="frame" x="0.0" y="29" width="100" height="100"/>
                                             </variation>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-PL-6De" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-PL-6De" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="108" y="72" width="284" height="57"/>
+                                                <rect key="frame" x="108" y="72" width="240" height="44"/>
                                             </variation>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQD-RV-3MC">
@@ -71,12 +74,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYF-1G-8vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-90" y="178"/>
+            <point key="canvasLocation" x="-957" y="-128"/>
         </scene>
-        <!--View Controller-->
+        <!--Amigo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AmigoViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -93,16 +96,6 @@
                                     <rect key="frame" x="20" y="68" width="200" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-QR-Qco">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="181" y="106" width="39" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="botonReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acm-4r-TVF"/>
-                                </connections>
-                            </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-KF-hcI">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
@@ -113,15 +106,6 @@
                                     <outletCollection property="gestureRecognizers" destination="vrK-bb-dWv" appends="YES" id="Ql7-UO-UHE"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola desconocido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOy-M7-fCC">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.92941176470588238" green="0.52156862745098043" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="39" width="138" height="21"/>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="3Lz-kB-xWf" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,18 +119,14 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="jg9-Qd-Qt4"/>
-                                <exclude reference="WgX-QR-Qco"/>
                                 <exclude reference="T0l-KF-hcI"/>
-                                <exclude reference="AOy-M7-fCC"/>
                                 <exclude reference="3Lz-kB-xWf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="jg9-Qd-Qt4"/>
-                                <include reference="WgX-QR-Qco"/>
                                 <include reference="T0l-KF-hcI"/>
-                                <include reference="AOy-M7-fCC"/>
                                 <include reference="3Lz-kB-xWf"/>
                             </mask>
                         </variation>
@@ -154,7 +134,6 @@
                     <connections>
                         <outlet property="controlEvaluacion" destination="3Lz-kB-xWf" id="2mH-6Z-z5S"/>
                         <outlet property="imagen" destination="T0l-KF-hcI" id="SuX-2O-QcU"/>
-                        <outlet property="nombreLabel" destination="AOy-M7-fCC" id="Izm-xd-dG9"/>
                         <outlet property="nombreTxt" destination="jg9-Qd-Qt4" id="r6E-pv-QT7"/>
                     </connections>
                 </viewController>
@@ -165,7 +144,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="595.5" y="178"/>
+            <point key="canvasLocation" x="-271.5" y="-128"/>
         </scene>
     </scenes>
     <resources>
