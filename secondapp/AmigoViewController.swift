@@ -15,6 +15,10 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var controlEvaluacion: EvaluationControl!
 
+    //MARK: atributo
+    var amigo: Amigo?
+    @IBOutlet weak var saveBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +30,11 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (sender !== saveBtn) {return}
+        amigo = Amigo(nombre: nombreTxt.text ?? "", foto: imagen.image, gAfinidad: controlEvaluacion.gradoAfinidad)
+    }
+    
     //MARK: Actions
    @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {
         nombreTxt.resignFirstResponder()
@@ -34,7 +43,12 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         imagePickerCtrl.delegate    = self
         presentViewController(imagePickerCtrl, animated:true, completion:nil)
     }
-
+    
+    @IBAction func cancelar(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         // Hide the keyboard.
@@ -50,35 +64,6 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         let selectedImage   = info[UIImagePickerControllerOriginalImage] as! UIImage
         imagen.image        = selectedImage
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

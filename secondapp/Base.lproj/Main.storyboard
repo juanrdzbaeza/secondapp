@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VC0-QR-U7s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iu8-ct-JU3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Amigo Table View Controller-->
+        <!--Lista de amigos-->
         <scene sceneID="WdO-f9-BcR">
             <objects>
                 <tableViewController id="VC0-QR-U7s" customClass="AmigoTableViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,12 +71,19 @@
                             <outlet property="delegate" destination="VC0-QR-U7s" id="CWh-aZ-1iS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Lista de amigos" id="Qr5-Nc-c43">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G40-ja-Sdf">
+                            <connections>
+                                <segue destination="SPj-8t-VmL" kind="presentation" identifier="AddAmigo" id="2IU-fe-B8G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYF-1G-8vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957" y="-128"/>
+            <point key="canvasLocation" x="-228" y="-128"/>
         </scene>
-        <!--Amigo View Controller-->
+        <!--Nuevo amigo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AmigoViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,14 +100,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="68" width="200" height="30"/>
+                                    <rect key="frame" x="20" y="72" width="200" height="30"/>
                                 </variation>
                             </textField>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-KF-hcI">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="144" width="240" height="240"/>
+                                    <rect key="frame" x="20" y="110" width="240" height="240"/>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="vrK-bb-dWv" appends="YES" id="Ql7-UO-UHE"/>
@@ -110,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="392" width="240" height="44"/>
+                                    <rect key="frame" x="20" y="358" width="240" height="44"/>
                                 </variation>
                             </view>
                         </subviews>
@@ -131,20 +138,70 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Nuevo amigo" id="nrU-Mu-zOX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uuk-iG-Gnj">
+                            <connections>
+                                <action selector="cancelar:" destination="BYZ-38-t0r" id="uOe-8o-2QM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oa6-WU-p8E">
+                            <connections>
+                                <segue destination="lQe-56-Fjo" kind="unwind" unwindAction="addNuevoAmigo:" id="mhD-p9-1KM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="controlEvaluacion" destination="3Lz-kB-xWf" id="2mH-6Z-z5S"/>
                         <outlet property="imagen" destination="T0l-KF-hcI" id="SuX-2O-QcU"/>
                         <outlet property="nombreTxt" destination="jg9-Qd-Qt4" id="r6E-pv-QT7"/>
+                        <outlet property="saveBtn" destination="Oa6-WU-p8E" id="344-Yh-i1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="lQe-56-Fjo" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="vrK-bb-dWv">
                     <connections>
                         <action selector="seleccionarImagen:" destination="BYZ-38-t0r" id="WNk-kK-53g"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-271.5" y="-128"/>
+            <point key="canvasLocation" x="1258.5" y="-128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K7a-Pz-VQR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iu8-ct-JU3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKC-xE-8aH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VC0-QR-U7s" kind="relationship" relationship="rootViewController" id="wXg-Lr-ktV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpK-YL-Ltl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-957" y="-128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7iR-KL-wTV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SPj-8t-VmL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DNN-7h-zOu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PIc-RX-3Ju"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9g-NZ-oDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523.5" y="-128"/>
         </scene>
     </scenes>
     <resources>

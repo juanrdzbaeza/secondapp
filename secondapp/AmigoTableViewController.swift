@@ -52,7 +52,16 @@ class AmigoTableViewController: UITableViewController {
         cell.evaluacion.gradoAfinidad = amigos[indexPath.row].gradoAfinidad
         return cell
     }
- 
+    
+    // MARK: - Unwind segue desde AmigoViewController
+    @IBAction func addNuevoAmigo(sender: UIStoryboardSegue){
+        let sourceViewController = sender.sourceViewController as! AmigoViewController
+        let nuevoAmigo = sourceViewController.amigo
+        
+        amigos.append(nuevoAmigo!)
+        let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)
+        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+    }
 
     /*
     // Override to support conditional editing of the table view.
