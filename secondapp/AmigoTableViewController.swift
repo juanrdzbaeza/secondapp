@@ -62,6 +62,13 @@ class AmigoTableViewController: UITableViewController {
         let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.beginUpdates()
+        tableView.reloadRowsAtIndexPaths(tableView.indexPathsForVisibleRows!, withRowAnimation: .Automatic)
+        tableView.endUpdates()
+    }
 
     /*
     // Override to support conditional editing of the table view.

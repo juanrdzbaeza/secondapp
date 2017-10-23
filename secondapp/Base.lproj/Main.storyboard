@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="130" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="130"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erv-XG-sjZ" id="X34-Ml-H5q">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
@@ -81,7 +81,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYF-1G-8vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="-128"/>
+            <point key="canvasLocation" x="-345" y="-18"/>
         </scene>
         <!--Nuevo amigo-->
         <scene sceneID="tne-QT-ifu">
@@ -165,7 +165,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1258.5" y="-128"/>
+            <point key="canvasLocation" x="1141.5" y="-18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K7a-Pz-VQR">
@@ -183,7 +183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpK-YL-Ltl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957" y="-128"/>
+            <point key="canvasLocation" x="-1110" y="-18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7iR-KL-wTV">
@@ -201,7 +201,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9g-NZ-oDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523.5" y="-128"/>
+            <point key="canvasLocation" x="406.5" y="-18"/>
         </scene>
     </scenes>
     <resources>
