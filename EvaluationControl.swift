@@ -30,10 +30,10 @@ class EvaluationControl: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //let alto = self.frame.height
-        let alto = CGFloat(44)
-        let ancho = self.frame.width/5
+        //let alto = CGFloat(44)
+        //let ancho = self.frame.width/5
         for i in 0..<5{
-            let boton = UIButton(frame: CGRect(x:0, y:0, width: ancho, height: alto))
+            let boton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             //boton.backgroundColor = UIColor.greenColor()
             boton.setImage(UIImage(named:"estrella vacia"), forState: .Normal)
             boton.setImage(UIImage(named:"estrella llena" ), forState: .Selected)
@@ -50,9 +50,16 @@ class EvaluationControl: UIView {
     }
     
     override func layoutSubviews() {
-        for (i, boton) in botones.enumerate() {
-            boton.frame.origin.x = CGFloat(i * (44 + 5))
+        let alto = self.frame.size.height
+        let espacioLibre = Int(Int(self.frame.size.width) - Int(alto) * botones.count)
+        let espaciado = Int(espacioLibre / botones.count)
+        
+        for(i, boton) in botones.enumerate(){
+            boton.frame.origin.x = CGFloat(i * (Int(alto) + espaciado))
+            boton.frame.size.height = alto
+            boton.frame.size.width = alto
         }
+        
         actualizaEstrellas()
     }
     

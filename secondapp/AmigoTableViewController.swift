@@ -11,14 +11,16 @@ import UIKit
 class AmigoTableViewController: UITableViewController {
     
     var amigos = [Amigo]()
+    //var amigos = [Amigo?]()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
         let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 4)
         let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
+        
         amigos += [amigo1!, amigo2!, amigo3!]
+        //amigos += [amigo1, amigo2, amigo3]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,6 +52,7 @@ class AmigoTableViewController: UITableViewController {
         cell.nombre.text = amigos[indexPath.row].nombre
         cell.foto.image = amigos[indexPath.row].foto
         cell.evaluacion.gradoAfinidad = amigos[indexPath.row].gradoAfinidad
+        //cell.accessoryType = .Checkmark //ejercicio 3 sesion 4
         return cell
     }
     

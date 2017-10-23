@@ -22,7 +22,8 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        nombreTxt.delegate    = self;
+        nombreTxt.delegate  = self;
+        saveBtn.enabled     = false; //ejercicio 5 sesion 4
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +49,14 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        if (nombreTxt.text != "") {
+            saveBtn.enabled = true  // ejercicio 5 sesion 4
+        }
+        if nombreTxt.text == "" {
+            saveBtn.enabled = false
+        }
+    }
     
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool{
