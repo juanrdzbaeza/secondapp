@@ -74,5 +74,4 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         imagen.image        = selectedImage
         dismissViewControllerAnimated(true, completion: nil)
     }
-
 }
