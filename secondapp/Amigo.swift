@@ -20,6 +20,8 @@ class Amigo {
     init?(nombre: String, foto:UIImage?, gAfinidad:Int){
         if nombre.isEmpty || gAfinidad < 0 {
             return nil
+            //self.nombre         = "juan"
+            //self.gradoAfinidad  = 1       // posible solucion ejerccio 5 sesion 4 (mala solucion)
         }
         self.nombre         = nombre
         self.foto           = foto

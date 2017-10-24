@@ -11,7 +11,7 @@ import UIKit
 class AmigoTableViewController: UITableViewController {
     
     var amigos = [Amigo]()
-    //var amigos = [Amigo?]()
+    //var amigos = [Amigo?]() // ejercicio 2 sesion 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class AmigoTableViewController: UITableViewController {
         let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
         
         amigos += [amigo1!, amigo2!, amigo3!]
-        //amigos += [amigo1, amigo2, amigo3]
+        //amigos += [amigo1, amigo2, amigo3] // ejercicio 2 sesion 4
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,20 +49,19 @@ class AmigoTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AmigoTableViewCell", forIndexPath: indexPath) as! AmigoTableViewCell
-        cell.nombre.text = amigos[indexPath.row].nombre
-        cell.foto.image = amigos[indexPath.row].foto
-        cell.evaluacion.gradoAfinidad = amigos[indexPath.row].gradoAfinidad
+        cell.nombre.text                = amigos[indexPath.row].nombre
+        cell.foto.image                 = amigos[indexPath.row].foto
+        cell.evaluacion.gradoAfinidad   = amigos[indexPath.row].gradoAfinidad
         //cell.accessoryType = .Checkmark //ejercicio 3 sesion 4
         return cell
     }
     
     // MARK: - Unwind segue desde AmigoViewController
     @IBAction func addNuevoAmigo(sender: UIStoryboardSegue){
-        let sourceViewController = sender.sourceViewController as! AmigoViewController
-        let nuevoAmigo = sourceViewController.amigo
-        
+        let sourceViewController    = sender.sourceViewController as! AmigoViewController
+        let nuevoAmigo              = sourceViewController.amigo
         amigos.append(nuevoAmigo!)
-        let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)
+        let newIndexPath            = NSIndexPath(forRow: amigos.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
     }
     
