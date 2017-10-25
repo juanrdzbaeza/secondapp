@@ -9,16 +9,16 @@
         <scene sceneID="WdO-f9-BcR">
             <objects>
                 <tableViewController id="VC0-QR-U7s" customClass="AmigoTableViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="139" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="139"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="132" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erv-XG-sjZ" id="X34-Ml-H5q">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="138"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="b0o-Mw-hDG">
@@ -63,6 +63,7 @@
                                     <outlet property="evaluacion" destination="J4w-PL-6De" id="Y6g-1n-UnA"/>
                                     <outlet property="foto" destination="b0o-Mw-hDG" id="Mx2-oW-n9F"/>
                                     <outlet property="nombre" destination="cQD-RV-3MC" id="QTz-5Z-HsA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mostrarDetalle" id="Enc-6i-6Yk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -146,7 +147,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oa6-WU-p8E">
                             <connections>
-                                <segue destination="lQe-56-Fjo" kind="unwind" unwindAction="addNuevoAmigo:" id="mhD-p9-1KM"/>
+                                <segue destination="KJk-Zm-YdE" kind="unwind" unwindAction="actualizaLista:" id="7mD-VI-urv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -158,14 +159,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="lQe-56-Fjo" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="KJk-Zm-YdE" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="vrK-bb-dWv">
                     <connections>
                         <action selector="seleccionarImagen:" destination="BYZ-38-t0r" id="WNk-kK-53g"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1393.5" y="-254"/>
+            <point key="canvasLocation" x="1453.5" y="-254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K7a-Pz-VQR">
@@ -201,10 +202,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9g-NZ-oDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658.5" y="-254"/>
+            <point key="canvasLocation" x="685.5" y="108"/>
         </scene>
     </scenes>
     <resources>
         <image name="imagen predeterminada" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Enc-6i-6Yk"/>
+    </inferredMetricsTieBreakers>
 </document>

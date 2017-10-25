@@ -12,23 +12,29 @@ class AmigoTableViewController: UITableViewController {
     
     var amigos = [Amigo]()
     //var amigos = [Amigo?]() // ejercicio 2 sesion 4
-    
+/*
+ *  Con esta línea creamos un botón especial (tipo Edit) en la parte izquierda
+ *  de la barra de navegación. Atención al método cargarDatosEjemplo() …
+ *  simplemente por legibilidad y claridad en el código.
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
-        let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
-        let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 4)
-        let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
-        
-        amigos += [amigo1!, amigo2!, amigo3!]
-        //amigos += [amigo1, amigo2, amigo3] // ejercicio 2 sesion 4
+        navigationItem.leftBarButtonItem = editButtonItem() // modificacion sesion 5
+        cargarDatosEjemplo()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    func cargarDatosEjemplo(){
+        let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
+        let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 4)
+        let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
+        amigos += [amigo1!, amigo2!, amigo3!]
+        //amigos += [amigo1, amigo2, amigo3] // ejercicio 2 sesion 4
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,22 +62,54 @@ class AmigoTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Unwind segue desde AmigoViewController
-    @IBAction func addNuevoAmigo(sender: UIStoryboardSegue){
-        let sourceViewController    = sender.sourceViewController as! AmigoViewController
-        let nuevoAmigo              = sourceViewController.amigo
-        amigos.append(nuevoAmigo!)
-        let newIndexPath            = NSIndexPath(forRow: amigos.count-1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tableView.beginUpdates()
         tableView.reloadRowsAtIndexPaths(tableView.indexPathsForVisibleRows!, withRowAnimation: .Automatic)
         tableView.endUpdates()
     }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if segue.identifier != "mostrarDetalle" {return}
+        
+        let celdaRef    = sender as! AmigoTableViewCell
+        let destinoVC   = segue.destinationViewController as! AmigoViewController
+        
+        let filaSeleccionada    = tableView.indexPathForCell(celdaRef)
+        destinoVC.amigo         = amigos[(filaSeleccionada?.row)!]
+    }
+/*
+ *   Vamos a crear un nuevo método que, en función de una variable que
+ *   determine el modo en el que se ha abierto la vista, llame a un método u
+ *   otro. En concreto, vamos a eliminar el método existente y vamos a crear
+ *   estos tres métodos:
+ */
+    
+    // MARK: - Unwind segue desde AmigoViewController
+    @IBAction func actualizaLista(sender: UIStoryboardSegue){
+        let sourceViewController = sender.sourceViewController as! AmigoViewController
+        
+        if let idFilaSeleccionada = tableView.indexPathForSelectedRow {
+            updateNuevoAmigo(sourceViewController.amigo!, idFila: idFilaSeleccionada)
+        }else{
+            addNuevoAmigo(sourceViewController.amigo!)
+        }
+        
+    }
+    
+    func addNuevoAmigo(amigo: Amigo){
+        amigos.append(amigo)
+        let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)
+        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+    }
+    func updateNuevoAmigo(amigo: Amigo, idFila: NSIndexPath){
+        amigos[idFila.row] = amigo
+        tableView.reloadRowsAtIndexPaths([idFila], withRowAnimation: .Fade)
+    }
+    
 
+/*-----------------------------------------------------------------------*/
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
