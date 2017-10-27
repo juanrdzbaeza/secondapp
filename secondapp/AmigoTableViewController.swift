@@ -9,8 +9,14 @@
 import UIKit
 
 class AmigoTableViewController: UITableViewController {
-    
-    var amigos = [Amigo]()
+/*
+ * creamos un observador de la variable amigos para que si nota algun cambio guarde la informacion
+ */
+    var amigos = [Amigo](){
+        didSet{
+            guardarDatos()
+        }
+    }
     //var amigos = [Amigo?]() // ejercicio 2 sesion 4
 /*
  *  Con esta línea creamos un botón especial (tipo Edit) en la parte izquierda
@@ -20,19 +26,38 @@ class AmigoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem() // modificacion sesion 5
-        cargarDatosEjemplo()
+        cargarDatos()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    /* el fichero de persistencia de datos ya ha sido creado y contiene datos, por lo que a priori este metodo ya no es necesario
     func cargarDatosEjemplo(){
         let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
         let amigo2 = Amigo(nombre: "Yuyu", foto: UIImage(named:"YuyuCirujano")!, gAfinidad: 4)
         let amigo3 = Amigo(nombre: "Manolo santander", foto: UIImage(named:"SantanderPeperoni")!, gAfinidad: 5)
         amigos += [amigo1!, amigo2!, amigo3!]
         //amigos += [amigo1, amigo2, amigo3] // ejercicio 2 sesion 4
+    }
+    */
+    func cargarDatos(){
+        if let array = NSKeyedUnarchiver.unarchiveObjectWithFile(Amigo.amigoURL.path!) as? [Amigo] {
+            self.amigos += array
+        }else{
+            //como tampoco es su llamada desde este punto del programa, en principio nunca se escribirá este print
+            //cargarDatosEjemplo()
+            print("aqui no entra")
+        }
+    }
+    
+    func guardarDatos() {
+        let exito = NSKeyedArchiver.archiveRootObject(self.amigos, toFile: Amigo.amigoURL.path!)
+        if !exito {
+            print("error")
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,6 +117,7 @@ class AmigoTableViewController: UITableViewController {
         let filaSeleccionada    = tableView.indexPathForCell(celdaRef)
         destinoVC.amigo         = amigos[(filaSeleccionada?.row)!]
     }
+    
 /*
  *   Vamos a crear un nuevo método que, en función de una variable que
  *   determine el modo en el que se ha abierto la vista, llame a un método u
@@ -120,6 +146,8 @@ class AmigoTableViewController: UITableViewController {
         amigos[idFila.row] = amigo
         tableView.reloadRowsAtIndexPaths([idFila], withRowAnimation: .Fade)
     }
+    
+    
     
 
 /*-----------------------------------------------------------------------*/
