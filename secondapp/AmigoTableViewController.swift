@@ -26,6 +26,7 @@ class AmigoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem() // modificacion sesion 5
+        self.editButtonItem().title = "Editar" // cambiamos el nombre del boton al cargar la vista
         cargarDatos()
         
         // Uncomment the following line to preserve selection between presentations
@@ -33,6 +34,7 @@ class AmigoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+
     /* el fichero de persistencia de datos ya ha sido creado y contiene datos, por lo que a priori este metodo ya no es necesario
     func cargarDatosEjemplo(){
         let amigo1 = Amigo(nombre: "Selu y Juan", foto: UIImage(named:"SeluYJuan")!, gAfinidad: 5)
@@ -117,6 +119,18 @@ class AmigoTableViewController: UITableViewController {
         let filaSeleccionada    = tableView.indexPathForCell(celdaRef)
         destinoVC.amigo         = amigos[(filaSeleccionada?.row)!]
     }
+/*
+ *  Modificamos los titulos de los botones en el modo de edición para cuando se entra en dicho modo
+ *  le asignamos OK, y para cuando salga el mismo nombre que al ser cargada la vista Editar.
+ */
+    override func setEditing (editing:Bool, animated:Bool)    {
+        super.setEditing(editing,animated:animated)
+        if(self.editing){
+            self.editButtonItem().title = "OK"
+        }else{
+            self.editButtonItem().title = "Editar"
+        }
+    }
     
 /*
  *   Vamos a crear un nuevo método que, en función de una variable que
@@ -145,9 +159,6 @@ class AmigoTableViewController: UITableViewController {
         tableView.reloadRowsAtIndexPaths([idFila], withRowAnimation: .Fade)
     }
     
-    
-    
-
 /*-----------------------------------------------------------------------*/
     /*
     // Override to support rearranging the table view.

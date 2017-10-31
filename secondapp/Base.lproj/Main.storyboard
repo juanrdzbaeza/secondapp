@@ -143,12 +143,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Nuevo amigo" id="nrU-Mu-zOX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uuk-iG-Gnj">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="uuk-iG-Gnj">
                             <connections>
                                 <action selector="cancelar:" destination="BYZ-38-t0r" id="uOe-8o-2QM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oa6-WU-p8E">
+                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="Oa6-WU-p8E">
                             <connections>
                                 <segue destination="KJk-Zm-YdE" kind="unwind" unwindAction="actualizaLista:" id="7mD-VI-urv"/>
                             </connections>
