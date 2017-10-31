@@ -83,7 +83,7 @@ class AmigoTableViewController: UITableViewController {
         cell.nombre.text                = amigos[indexPath.row].nombre
         cell.foto.image                 = amigos[indexPath.row].foto
         cell.evaluacion.gradoAfinidad   = amigos[indexPath.row].gradoAfinidad
-        //cell.accessoryType = .Checkmark //ejercicio 3 sesion 4
+        cell.accessoryType = .Checkmark //ejercicio 3 sesion 4
         return cell
     }
     
@@ -124,7 +124,6 @@ class AmigoTableViewController: UITableViewController {
  *   otro. En concreto, vamos a eliminar el método existente y vamos a crear
  *   estos tres métodos:
  */
-    
     // MARK: - Unwind segue desde AmigoViewController
     @IBAction func actualizaLista(sender: UIStoryboardSegue){
         let sourceViewController = sender.sourceViewController as! AmigoViewController
@@ -136,7 +135,6 @@ class AmigoTableViewController: UITableViewController {
         }
         
     }
-    
     func addNuevoAmigo(amigo: Amigo){
         amigos.append(amigo)
         let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)

@@ -9,12 +9,12 @@
         <scene sceneID="WdO-f9-BcR">
             <objects>
                 <tableViewController id="VC0-QR-U7s" customClass="AmigoTableViewController" customModule="secondapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-6y-OVK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="132" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AmigoTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="82" id="erv-XG-sjZ" customClass="AmigoTableViewCell" customModule="secondapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erv-XG-sjZ" id="X34-Ml-H5q">
@@ -27,35 +27,38 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             </variation>
                                         </imageView>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-PL-6De" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="80" y="86" width="240" height="44"/>
-                                            </variation>
-                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQD-RV-3MC">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="108" y="29" width="284" height="21"/>
+                                                <rect key="frame" x="88" y="8" width="304" height="21"/>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-PL-6De" customClass="EvaluationControl" customModule="secondapp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            </accessibility>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="88" y="43" width="190" height="30"/>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="b0o-Mw-hDG"/>
-                                            <exclude reference="J4w-PL-6De"/>
                                             <exclude reference="cQD-RV-3MC"/>
+                                            <exclude reference="J4w-PL-6De"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="b0o-Mw-hDG"/>
-                                            <include reference="J4w-PL-6De"/>
                                             <include reference="cQD-RV-3MC"/>
+                                            <include reference="J4w-PL-6De"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

@@ -52,7 +52,7 @@ class EvaluationControl: UIView {
     override func layoutSubviews() {
         let alto = self.frame.size.height
         let espacioLibre = Int(Int(self.frame.size.width) - Int(alto) * botones.count)
-        let espaciado = Int(espacioLibre / botones.count)
+        let espaciado = Int(espacioLibre / (botones.count - (1/2)))
         
         for(i, boton) in botones.enumerate(){
             boton.frame.origin.x = CGFloat(i * (Int(alto) + espaciado))
